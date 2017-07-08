@@ -1,0 +1,397 @@
+
+                Téléphone : 06 52 52 52 23
+
+<!DOCTYPE html>
+<html>
+	<html style=" background-image: url(image/Bard.jpg); background-size: cover; background-attachment: fixed; background-position: right top;">	
+		<head>
+			<meta charset="utf-8" />
+			<link rel="stylesheet" href="Style.css" />
+			 <link rel="icon" type="image/png" href="image/lol.png" />  <!-- C:\Users\Sim0n\Desktop\Autre\Html\image" -->
+			<title> Champion List : Résumé </title>	
+		
+			<!--Import materialize.css-->
+			<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+		
+		</head>
+		<?php
+			if($_POST['Confirmer'] != $_POST['mdp'])
+			{	
+				echo 'Passeword non correspondant';
+			}
+		?>
+		
+		<?php
+			if (isset($_POST['adresseMail']))
+			{	
+				$nbArob=mb_substr_count($_POST['adresseMail'],"@");
+					if($nbArob==1)
+					{
+						echo'Email valide';
+					}
+					else
+					{
+						echo'Email invalide';
+					}
+			}
+		?>
+			
+		
+		<body>
+			<div class="row white-text">
+				<div class="col s12 m6">
+				  <div class="card" style="background-color: rgba(46, 46, 51, 0.67);">
+					<div class="card-content white-text">
+					  <span class="card-title">À propos de vous :</span>
+						<p style="font-family: 'Oswald', sans-serif; text-shadow: -1px -1px #000, 1px 1px #000, -3px 0 4px #000;">
+							
+							<p style="font-family: 'Oswald', sans-serif; text-shadow: -1px -1px #000, 1px 1px #000, -3px 0 4px #000;"> 
+								Tu t'appelles <?php echo $_POST['Pseudo']; ?>, ton adresse mail est : <?php echo $_POST['adresseMail']; ?>. Tu es <?php echo $_POST['civilite'] ?> qui es classé "
+								<?php echo $_POST['Ligue'] ?> <?php echo $_POST['Rang'] ?>" et tu aime <?php echo $_POST['interets'] ?>. </p><br />
+							</p>
+						
+							<?php			
+								$fichier=fopen("Information.txt","w+");
+								$texte = $_POST['message'];
+								fwrite($fichier, $texte); 
+								fclose($fichier);
+								
+								$monfichier = fopen('Information.txt', 'r');
+								$ligne = fgets($monfichier);
+							?>
+								<p>
+									What esle ? <?php echo $ligne ;?> 
+								</p>
+							<?php
+								fclose($monfichier);
+							?>
+						
+					</div>
+					
+					<div class="card-action">
+								<p style="font-family: 'Oswald', sans-serif; text-shadow: -1px -1px #000, 1px 1px #000, -3px 0 4px #000;">
+									Si tu veux changer les informations, <a href="page 3.php">clique ici</a>pour revenir au formulaire.
+								</p>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		    
+			<div style="color: White;">
+				
+				
+				
+				<?php
+								
+					$monfichier = fopen('compteur.txt', 'r+');
+					$pages_vues = fgets($monfichier); // On lit la première ligne
+					$pages_vues++;
+					fseek($monfichier, 0); // Curseur au début du fichier
+					fputs($monfichier, $pages_vues); // Nouveau nombre de pages vues
+					fclose($monfichier);
+					$date = date("d-m-Y");
+					$heure = date("H:i");
+					echo '<p>Cette page a été vue ' . $pages_vues . ' fois </p>';
+					$date1 = date("m-d-Y");
+					echo("A l'heure actuelle, nous sommes le $date et il est $heure <br />");
+					echo("La date anglaise : $date1");
+				?>
+				
+			</div><br />
+		
+		</body>
+	</html>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<html>
+
+<!-- 
+Page HTML
+Crée le 09/09/15
+Modifié le 04/11/15
+-->
+<html style=" background-image: url(image/Braum.jpg); background-size: cover; background-attachment: fixed; background-position: right top;">	
+	
+   <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="Style.css" />
+         <link rel="icon" type="image/png" href="image/lol.png" />  <!-- C:\Users\Sim0n\Desktop\Autre\Html\image" -->
+        <title> Champion List : Le site des champion </title>	
+   </head>
+	
+	<body>
+	
+	<a href="page 1.php">
+		<img style="position:absolute; left:20px;" height="256px" width="256px"   src="image/Nocturne.png" title="Accueil">		
+	</a>
+
+	<div style="position:absolute; right:14%; top:24%;">
+		   
+		 <form method="post" action="page 6.php">
+			<p class="titre">Inscrivez vous :</p>
+			<fieldset id="inscription"><br />
+
+				<p><label>Ligue : </label>
+						<select id="ligue" name="Ligue">
+							<option value="bronze">Bronze</option>
+							<option value="argent">Argent</option>
+							<option value="or">Or</option>
+							<option value="platine">Platine</option>
+							<option value="diamant">Diamant</option>
+							<option value="master">Master</option>
+							<option value="challenger">Challenger</option>
+						</select>
+						
+					   <select id="rang" name="Rang">
+								<?php
+									$Rang=0
+								?>
+							<option value="1">I</option>
+							<option value="2">II</option>
+							<option value="3">III</option>
+							<option value="4">IV</option>
+							<option value="5">V</option>
+						</select>
+					</p>
+				
+				<p id="civilite"><label>Civilité : </label>
+					<input type="radio" checked="checked" name="civilite" value="un homme" />Homme
+					<input type="radio" name="civilite" value="une femme" />Femme
+				</p>
+
+				<label>Pseudo : </label>
+						<input style="width:267px;" type="text" name="Pseudo" size="30" /><br />
+						
+				<label>Adresse mail : </label>
+						<input style="width:267px;" type="text" name="adresseMail" size="30" /><br />
+			
+			
+				<label>Mot de passe : </label>
+						<input style="width:77px; margin-right:5px;" type="password" name="mdp" size="30" />
+				
+				<label style="position:inherit;">Confirmation : </label>
+						<input style="position:absolute; width:77px; margin-left: 5px;" type="password" name="Confirmer" size="30" /><br />
+				
+				
+				<p id="interets"><label>Intérêts : </label>
+						<input type="checkbox" checked="checked" name="interets" value="rien" style="display:none"/> &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp  
+						<input type="checkbox" name="interets" value="faire du sport" />Sport &nbsp &nbsp  
+						<input type="checkbox" name="interets" value="aller sur internet" />Internet<br />
+						<input type="checkbox" name="interets" value="aller au cinema" />Cinéma
+						<input type="checkbox" name="interets" value="voyager" />Voyage
+				</p>
+				
+				<p id="info"><label>Information supplémentaire : </label><br/><br/>
+					
+					<textarea name="message" rows="4" cols="45">
+					</textarea>
+						
+				</p>
+				
+				<p id="buttons">
+						  <input id="bibi" name="bar" type="submit" value="Envoyer" />
+						  <input type="reset" value="Recommencer" />
+				</p>
+				
+			</fieldset>
+		</form>
+	</div>	
+  		
+			
+	</body>
+</html>
+
+
+
+
+// page 3
+ <!DOCTYPE html>
+<html>
+
+   <head>
+        <meta charset="utf-8" />
+	</head>
+	
+	<?php		
+
+	?>
+	
+	<script language="javascript">
+			alert("Inscription réussie !")					
+	</script>
+<?php		
+		try
+		{
+			$bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+		}
+		catch(Exception $e)
+		{
+				die('Erreur : '.$e->getMessage());
+		}
+
+		// On ajoute une entrée dans la table
+	$req = $bdd->prepare('INSERT INTO inscription(ligue, rang, sexe, pseudo, mail, mdp) VALUES(?, ?, ?, ?, ?, ?)');
+	$req->execute(array($_POST['Ligue'], $_POST['Rang'], $_POST['civilite'], $_POST['Pseudo'], $_POST['adresseMail'], $_POST['mdp']));
+
+			if (isset($_POST['adresseMail']))
+		{	
+			$nbArob=mb_substr_count($_POST['adresseMail'],"@");
+			if($nbArob!=1)
+			{
+				$id = $bdd->query('SELECT id FROM inscription ORDER BY id DESC LIMIT 1');
+				mysql_query("DELETE FROM inscription WHERE id='$id'");
+			}
+		}
+	
+?>
+
+		<a href="minichat.php">
+			<img style="position:absolute; left:20px;" height="256px" width="256px"   src="image/Renekton.jpg" title="Chatter">		
+		</a>
+		
+</html>	
+	 
+//page 5bis
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="utf-8" />
+	</head>
+	
+	<script language="javascript">
+			alert("Inscription réussie !")					
+	</script>
+<?php		
+		try
+		{
+			$bdd = new PDO('mysql:host=localhost;dbname=bdd;charset=utf8', 'root', '');
+		}
+		catch(Exception $e)
+		{
+				die('Erreur : '.$e->getMessage());
+		}
+
+		// On ajoute une entrée dans la table
+	$req = $bdd->prepare('INSERT INTO inscription(ligue, rang, sexe, pseudo, mail, mdp) VALUES(?, ?, ?, ?, ?, ?)');
+	$req->execute(array($_POST['Ligue'], $_POST['Rang'], $_POST['civilite'], $_POST['Pseudo'], $_POST['adresseMail'], $_POST['mdp']));
+
+			if (isset($_POST['adresseMail']))
+			{	
+			$nbArob=mb_substr_count($_POST['adresseMail'],"@");
+				if($nbArob==1)
+				{
+					<a href="minichat.php">
+					<img style="position:absolute; left:20px;" height="256px" width="256px"   src="image/Renekton.jpg" title="Chatter">		
+					</a>
+				}
+			}
+	
+?>
+
+
+
+</html>	
+	
+
+	//page 5
+	<!DOCTYPE html>
+<html>
+
+<!-- 
+Page HTML
+Crée le 09/09/15
+Modifié le 04/11/15
+-->
+<html style=" background-image: url(image/Braum.jpg); background-size: cover; background-attachment: fixed; background-position: right top;">	
+	
+   <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="Style.css" />
+         <link rel="icon" type="image/png" href="image/lol.png" />  <!-- C:\Users\Sim0n\Desktop\Autre\Html\image" -->
+        <title> Champion List : Le site des champion </title>	
+   </head>
+	
+		<body>
+		
+		<a href="page 1.php">
+			<img style="position:absolute; left:20px;" height="256px" width="256px"   src="image/Nocturne.png" title="Accueil">		
+		</a>
+
+			<div style="position:absolute; right:14%; top:24%;">
+				   
+				  <form action="page 5bis.php" method="post">
+					<p class="titre">Inscrivez vous :</p>
+					<fieldset id="inscription"><br />
+
+						<p><label>Ligue : </label>
+								<select id="ligue" name="Ligue">
+									<option value="bronze">Bronze</option>
+									<option value="argent">Argent</option>
+									<option value="or">Or</option>
+									<option value="platine">Platine</option>
+									<option value="diamant">Diamant</option>
+									<option value="master">Master</option>
+									<option value="challenger">Challenger</option>
+								</select>
+								
+							   <select id="rang" name="Rang">
+										<?php
+											$Rang=0
+										?>
+									<option value="1">I</option>
+									<option value="2">II</option>
+									<option value="3">III</option>
+									<option value="4">IV</option>
+									<option value="5">V</option>
+								</select>
+							</p>
+						
+							<p id="civilite"><label>Civilité : </label>
+								<input type="radio" checked="checked" name="civilite" value="1" />Homme
+								<input type="radio" name="civilite" value="2" />Femme
+							</p>
+
+							<label>Pseudo : </label>
+								<input style="width:267px;" type="text" name="Pseudo" size="30" /><br />
+								
+							<label>Adresse mail : </label>
+								<input style="width:267px;" type="text" name="adresseMail" size="30" /><br />
+					
+					
+							<label>Mot de passe : </label>
+								<input style="width:77px; margin-right:5px;" type="password" name="mdp" size="30" />
+						
+						
+						<p id="buttons">
+							<input id="bibi" name="bar" type="submit" value="Envoyer"/>		
+							<input type="reset" value="Recommencer" />
+						</p>
+					
+				</fieldset>
+			</form>
+		</div>	
+	</body>
+</html>
+
+

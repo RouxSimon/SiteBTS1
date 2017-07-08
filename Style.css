@@ -1,0 +1,256 @@
+
+/* Le paragraphe */
+
+		.row .col.m6 {
+			width: 900px;
+			margin-left: 4%;
+			margin-top: 40px;
+		}
+
+
+		.card {
+			overflow: hidden;
+			margin: 0.5rem 0 1rem 0;
+			background-color: rgba(59, 101, 125, 0.39);
+			font-family: 'Passion One', cursive;
+			text-shadow: -1px -1px #000, 1px 1px #000, -3px 0 4px #000;
+		}
+
+/* Les bouttons */
+
+		#Jean {
+			border-radius: 60px;
+			background-color: black;
+			color: #DDD;
+		}
+
+
+
+/* Le tableau */
+
+		tr {
+			font-size: 50px;
+			font-family: 'Slabo 27px', serif;
+			color: white;
+			text-shadow: -1px -1px #000, 1px 1px #000, -3px 0 4px #000;
+		}
+
+		td {
+			font-family: 'Passion One', cursive;
+			text-shadow: -1px -1px #000, 1px 1px #000, -3px 0 4px #000;
+			font-size: 20px; 
+			text-align:center;
+			vertical-align: bottom;
+			width:18%;
+		}
+
+
+
+/* Le footer */
+
+		footer.page-footer {
+			background-color: #000110;
+			font-family: 'Slabo 27px', serif;
+		}
+
+		footer {
+		//	position:fixed;
+			bottom:0;
+			left:0;
+			width:100%;
+		}
+
+
+
+/* Le titre */
+
+		h1
+		{
+			background-image: url(image/ChallengerBanner.png); background-repeat: no-repeat; background-position: center; height: 200px;
+			text-shadow: -1px -1px #000, 1px 1px #000, -3px 0 4px #000;
+			font-family: 'Passion One', cursive;
+			color: white;
+			text-align:center;
+			padding-top: 68px; 
+		}
+
+
+
+/* La navbar */
+
+		nav .brand-logo{
+			margin-left: 50px;
+		}
+
+		nav {
+			
+			width: 100%;
+			height: 70px;
+			line-height: 70px;
+			
+			background-color: rgba(32, 56, 90, 0.85);
+				
+			font-size: 150%;
+			text-shadow: -1px -1px #000, 1px 1px #000, -3px 0 4px #000;
+			font-family: 'Passion One', cursive;
+			color: White;
+		}
+
+		li
+		{
+			color: White;
+		}
+
+
+
+/* La vidéo */
+
+		iframe {
+			margin-left: 18%;
+			margin-bottom: -120px;
+			margin-top: 20px;
+		}
+
+/* un autre formulaire */
+
+		#connexion input{
+		width: 200px;
+		margin-bottom: 5px;
+		}
+		
+		fieldset#connexion {
+			background: rgba(57, 158, 186, 0.48);
+			border: outset rgba(49, 108, 142, 0.33);
+		}
+		
+		#connexion input {
+			margin-left:95px;
+			margin-bottom:5px;
+		}	
+		
+		#connexion label {
+			position:absolute;
+			font-size:15px;
+			left:20px;
+		}
+		
+/* Le formulaire */
+
+		.StyleNEWS {
+			color:white;
+		}
+
+		p.titre {
+			background: rgba(40, 75, 103, 0.8);
+			color: #FFF;
+			padding: 1px;
+			font-size: 20px;
+			border: 2px outset rgba(23, 96, 128, 0.78);
+			position:relative;
+			margin-bottom: -15px;
+			width:150px;
+			margin-left:15px;
+		}
+		
+		fieldset#inscription {
+			background: rgba(57, 158, 186, 0.48);
+			border: outset rgba(49, 108, 142, 0.33);
+		}
+		
+		
+		#inscription label {
+			position:absolute;
+			font-size:15px;
+			left:20px;
+		}
+
+		#inscription input {
+			margin-left:105px;
+			margin-bottom:5px;
+		}
+		
+		#inscription input +input {
+			margin-left: 10px;
+		}
+
+	
+	/* menus divers */		
+		
+		fieldset {
+			color:white;	
+			width:400px;
+		}
+		
+		#rang  {
+			position:inherit;
+			margin-left:10px;
+		}
+		#ligue {
+			margin-left:105px;
+		}
+	
+		textarea {
+			resize: none;
+			margin-top: 10px;
+		}
+	
+    /* civilite */
+	
+		#civilite {
+			font-size:15px;
+		}
+
+		#civilite input {
+			margin-left: 105px;
+		}
+
+		#civilite input + input {
+			margin-left: 10px;
+		}
+		
+    /* interets */
+	
+		#interets {
+			font-size:15px;
+		}
+		
+		#interets input {
+			margin-left:105px;
+		}
+		
+		#interets input +input {
+			margin-left: 20px;
+		}
+		
+		#interets br+input {
+			margin-left:105px;
+		}
+	
+	/* buttons */	
+		
+		p#buttons {
+			text-align:center;
+		}
+		
+		#buttons input {
+			margin-left:15px;
+		}  
+
+		 #buttons input +input {
+			margin-left:5px;
+		} 
+
+
+		
+		
+/* Gallery */
+		
+		#img6:hover {
+			width:316px;
+			height:229px;
+		}
+		
+		#img6bis:hover {
+			width:346px;
+			height:224px;
+		}
